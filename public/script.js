@@ -1,21 +1,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
- 
+ document.addEventListener('mousedown', e => e.preventDefault());
+
   // SCROLL RESTORATION
  
-  // if ('scrollRestoration' in history) {
-  //   history.scrollRestoration = 'manual';
-  // }
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-  // window.addEventListener('beforeunload', () => {
-  //   localStorage.setItem('scrollPos', window.scrollY);
-  // });
+  window.addEventListener('beforeunload', () => {
+    localStorage.setItem('scrollPos', window.scrollY);
+  });
 
-  // const scrollPos = localStorage.getItem('scrollPos');
-  // if (scrollPos) {
-  //   window.scrollTo(0, scrollPos);
-  // }
+  const scrollPos = localStorage.getItem('scrollPos');
+  if (scrollPos) {
+    window.scrollTo(0, scrollPos);
+  }
 
   // MOBILE MENU
  
@@ -80,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         openTexts[index].classList.remove('hidden');
         closeBtns[index].classList.remove('hidden');
         btn.classList.add('hidden');
-        openTexts[index].scrollIntoView({ behavior: 'smooth' });
+        // openTexts[index].scrollIntoView({ behavior: 'smooth' });
       });
     });
 
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         openTexts[index].classList.add('hidden');
         btn.classList.add('hidden');
         openBtns[index].classList.remove('hidden');
-        openBtns[index].scrollIntoView({ behavior: 'smooth' });
+        // openBtns[index].scrollIntoView({ behavior: 'smooth' });
       });
     });
   }
