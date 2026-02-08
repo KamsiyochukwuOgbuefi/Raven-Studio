@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
- document.addEventListener('mousedown', e => e.preventDefault());
+//  document.addEventListener('mousedown', e => e.preventDefault());
 
   // SCROLL RESTORATION
  
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(el);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     observeEls.forEach(el => observer.observe(el));
   }
